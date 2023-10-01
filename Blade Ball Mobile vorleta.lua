@@ -1,4 +1,4 @@
-local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
+local library = loadstring(game:HttpGet(('https://pastebin.com/raw/FsJak6AT')))()
 
 local e = library:CreateWindow("Vorleta MB spam Beta")
 
