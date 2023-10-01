@@ -2,7 +2,7 @@ local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloo
 
 local e = library:CreateWindow("Vorleta MB spam Beta")
 
-e;Toggle("Auto Click", function(state)
+e:Toggle("Auto Click", function(state)
     if state then
         _G.ParryAttempt = true;
         while _G.ParryAttempt == true do
