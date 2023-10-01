@@ -1,11 +1,15 @@
 local library = loadstring(game:HttpGet(('https://pastebin.com/raw/FsJak6AT')))()
 
-local e = libraryWindow("Vorleta MB spam Beta")
+local w = library:CreateWindow("Vorleta Mobile")
 
-e:Toggle("Auto Click", function(state)
-    if state then
-        _G.ParryAttempt = true
-        while _G.ParryAttempt do
+local b = w:CreateFolder("Spam")
+
+e:Toggle("Auto Click", function(bool)
+    Toggle = bool;
+    end)
+spawn(function()
+        while wait() do
+            
             local args = {
             [1] = 0.5,
             [2] = CFrame.new(-157.66162109375, 17.132680892944336, -114.03600311279297, 0.8926612734794617, 0.2507196366786957, -0.37456053495407104, 1.3797912146173985e-08, 0.831011950969696, 0.5562545657157898, 0.45072823762893677, -0.4965468943119049, 0.7418121099472046),
@@ -31,9 +35,7 @@ e:Toggle("Auto Click", function(state)
         }
         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ParryAttempt"):FireServer(unpack(args))
         wait()
-    end
-    else
-        _G.ParryAttempt = false
+        end 
 end)
 
 
