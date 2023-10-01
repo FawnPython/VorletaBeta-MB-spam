@@ -1,22 +1,30 @@
-getgenv().Parry = false;
+getgenv().ParryAttempt = false;
 
-_G.ToggleColor = Color3.fromRGB(255,0,0)
-_G.ButtonColor = Color3.fromRGB(0,255,0)
-_G.SliderColor = Color3.fromRGB(0,0,255)
 
-local library = loadstring(game:HttpGet(('https://pastebin.com/raw/FsJak6AT')))() -- It's obfuscated, I won't let you see my ugly coding skills. =)
+local library = loadstring(game:HttpGet(('https://pastebin.com/raw/FsJak6AT')))() 
 
 local w = library:CreateWindow("Vorleta")
 
 local b = w:CreateFolder("Mobile")
 
-
-b:Toggle("Spam" ,function(bool)
-    getgenv().Parry = bool
-    print('Auto Spam is: ', bool);
-    if bool then    
-       parry();
+b:Toggle("Spam",function(bool)
+    shared.Parry = bool
+    print('Parry is: ', bool)
+    if bool then
+        Parry();
     end
+end)
+
+
+b:Label("Pretty Useless NGL",Color3.fromRGB(38,38,38),Color3.fromRGB(0,216,111)) --BgColor,TextColor
+
+b:Button("Button",function()
+    print("Elym Winning")
+end)
+
+b:Toggle("Toggle",function(bool)
+    shared.toggle = bool
+    print(shared.toggle)
 end)
 
 b:Slider("Slider",10,30,true,function(value) --MinValue,MaxValue,Precise
@@ -43,20 +51,11 @@ b:DestroyGUI()
 
 b:GuiSettings() -- Use it if you want to let people customize toggles,buttons and sliders color
 
---Example of refresh
 
---[[local label = b:Label("Hi",Color3.fromRGB(255,0,0),Color3.fromRGB(0,255,0))
-
-label:Refresh("Not epic")
-
-local dropdown = b:Dropdown("Hi",{"A","B"})
-
-dropdown:Refresh({"A","B","C"})
-]]
 
 function Parry()
     spawn(function()
-        while getgenv().ParryAttempt = true do
+        while getgenv().ParryAttempt == true do
             local args = {
             [1] = 0.5,
             [2] = CFrame.new(-157.66162109375, 17.132680892944336, -114.03600311279297, 0.8926612734794617, 0.2507196366786957, -0.37456053495407104, 1.3797912146173985e-08, 0.831011950969696, 0.5562545657157898, 0.45072823762893677, -0.4965468943119049, 0.7418121099472046),
@@ -86,5 +85,7 @@ function Parry()
              end
         end)
     end
-    
+
     Parry()
+
+
