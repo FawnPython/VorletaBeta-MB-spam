@@ -1,6 +1,6 @@
 local library = loadstring(game:HttpGet(('https://pastebin.com/raw/FsJak6AT')))()
 
-local e = library:CreateWindow("Vorleta MB spam Beta")
+local e = libraryWindow("Vorleta MB spam Beta")
 
 e:Toggle("Auto Click", function(state)
     if state then
