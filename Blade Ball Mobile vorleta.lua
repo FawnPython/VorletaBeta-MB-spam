@@ -1,12 +1,10 @@
--G.ParryAttempt = false;
-
 local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
 
 local e = library:CreateWindow("Vorleta MB spam Beta")
 
 e;Toggle("Auto Click", function(state)
     if state then
-        -G.ParryAttempt = true;
+        _G.ParryAttempt = true;
         while _G.ParryAttempt == true do
 
             local args = {
@@ -37,8 +35,7 @@ e;Toggle("Auto Click", function(state)
                 wait()
     end
 else
-    -G.ParryAttempt = false;
-
+    _G.ParryAttempt = false;
 end)
 
 
