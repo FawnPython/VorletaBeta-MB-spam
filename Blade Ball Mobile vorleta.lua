@@ -11,9 +11,45 @@ local b = w:CreateFolder("Mobile")
 b:Toggle("Spam",function(bool)
     getgenv().ParryAttempt = bool
     print('Auto Spam is: ', bool);
+    if bool then    
        parry();
     end
 end)
+
+b:Slider("Slider",10,30,true,function(value) --MinValue,MaxValue,Precise
+    print(value)
+end)
+
+b:Dropdown("Dropdown",{"A","B","C"},true,function(mob) --Replace the Dropdown name with the selected one(A,B,C)
+    print(mob)
+end)
+
+b:Bind("Bind",Enum.KeyCode.C,function() --Default bind
+    print("Yes")
+end)
+
+b:ColorPicker("ColorPicker",Color3.fromRGB(255,0,0),function(color)
+    print(color)
+end)
+
+b:Box("Box","number",function(value) -- "number" or "string"
+    print(value)
+end)
+
+b:DestroyGUI()
+
+b:GuiSettings() -- Use it if you want to let people customize toggles,buttons and sliders color
+
+--Example of refresh
+
+--[[local label = b:Label("Hi",Color3.fromRGB(255,0,0),Color3.fromRGB(0,255,0))
+
+label:Refresh("Not epic")
+
+local dropdown = b:Dropdown("Hi",{"A","B"})
+
+dropdown:Refresh({"A","B","C"})
+]]
 
 function Parry()
     spawn(function()
@@ -47,5 +83,5 @@ function Parry()
              end
         end)
     end
-
-Parry()
+    
+    Parry()
