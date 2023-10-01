@@ -30,9 +30,8 @@ e:Toggle("Auto Click", function(state)
                 [2] = 207
             }
         }
-        
-                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ParryAttempt"):FireServer(unpack(args))
-                wait()
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ParryAttempt"):FireServer(unpack(args))
+        wait()
     end
 else
     _G.ParryAttempt = false;
