@@ -4,7 +4,7 @@ local w = library:CreateWindow("Vorleta Mobile")
 
 local b = w:CreateFolder("Spam")
 
-e:Toggle("Auto Click", function(bool)
+b:Toggle("Auto Click", function(bool)
     Toggle = bool;
 end)
 spawn(function()
